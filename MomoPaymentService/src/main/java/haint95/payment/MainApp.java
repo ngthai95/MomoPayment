@@ -74,6 +74,11 @@ public class MainApp {
                     case "LIST_BILL":
                         invoker.addCommand(new ListBillCommand());
                         break;
+                    case "PAY":
+                    case "LIST_PAYMENT":
+                    case "SEARCH_BILL_BY_PROVIDER":
+                        System.out.println("Unsupported Command");
+                        break;
                     case "EXIT":
                         return;
                     default:
