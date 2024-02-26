@@ -1,5 +1,7 @@
 package haint95.payment.test.command;
 
+import haint95.payment.command.CashInCommand;
+import haint95.payment.command.ListBillCommand;
 import haint95.payment.common.DefaultConfig;
 import haint95.payment.database.DatabaseFromCache;
 import haint95.payment.orm.UserAccount;
@@ -28,12 +30,14 @@ public class ListBillTest {
     @Test
     public void testListBillSize() {
         UserAccount account = DatabaseFromCache.getInstance().getData().get(DefaultConfig.USER_DEFAULT);
+        new ListBillCommand().execute(DefaultConfig.USER_DEFAULT);
         assertEquals(2, account.getBills().size());
     }
 
     @Test
     public void testListBillContain() {
         UserAccount account = DatabaseFromCache.getInstance().getData().get(DefaultConfig.USER_DEFAULT);
+        new ListBillCommand().execute(DefaultConfig.USER_DEFAULT);
         assertTrue(account.getBills().containsKey(1));
     }
 }
