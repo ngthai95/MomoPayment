@@ -46,4 +46,8 @@ public class SampleTest {
         mapAccount.put(DefaultConfig.USER_DEFAULT, account);
         DatabaseFromCache.getInstance().setData(mapAccount);
     }
+
+    public static void clearData(){
+        DatabaseFromCache.getInstance().clearData();
+    }
 }
